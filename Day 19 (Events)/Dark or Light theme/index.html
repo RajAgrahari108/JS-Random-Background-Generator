@@ -18,7 +18,7 @@
             margin: 30px 0px;
 
         }
-        button{
+        .darkbtn{
             padding: 10px 20px;
             font-size: 22px;
             position: absolute;
@@ -29,13 +29,22 @@
             background-color: black;
             color: white;
         }
+        .randomTheme{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            font-size: 22px;
+        }
     </style>
 </head>
 <body>
     
-    <button onclick="theme()"> 
+    <button onclick="theme()" class="darkbtn"> 
         Dark <i class="fa-solid fa-moon"></i> 
     </button>
+
+    <button class="randomTheme" onclick="randomTheme()"> Random Theme</button>
     <h1>Times OF India</h1>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, incidunt. Ex, dolorem eveniet? Rerum quia cumque tenetur, odio quod tempora debitis doloremque ut omnis dolor temporibus! Voluptatem iusto alias quam.
     Maxime, molestias deserunt laudantium earum neque consequuntur assumenda necessitatibus sapiente, porro nisi sed accusantium minima natus nobis dolore culpa magni quaerat adipisci. Quaerat doloremque, ipsa provident mollitia molestiae temporibus est!
@@ -59,7 +68,22 @@
                 btn.innerHTML = `Dark <i class="fa-solid fa-moon"></i>`
             }
             body.classList.toggle('dark')
+
         }
+
+         function randomColor(){
+                let r = Math.round(Math.random()*255)
+                let g = Math.round(Math.random()*255)
+                let b = Math.round(Math.random()*255)
+
+                return `rgb(${r}, ${g}, ${b})`
+            }
+
+            function randomTheme(){
+                body.style.backgroundColor= randomColor();
+                body.style.color= randomColor();
+            }
+
       
     </script>
 </body>
